@@ -1,0 +1,43 @@
+org: sebastianorg
+app: api-campana-app
+service: api-campana
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  environment:
+    DB_HOST: ${self:custom.dbHost}
+    DB_USER: ${self:custom.dbUser}
+    DB_PASSWORD: ${self:custom.dbPassword}
+    DB_NAME: ${self:custom.dbName}
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+
+
+custom:
+  dbHost: database.rds.amazonaws.com
+  dbUser: user
+  dbPassword: Pa$$30r
+  dbName: campanadb
+
+
+resources:
+  Resources:
+    CampanaDBInstance:
+      Type: AWS::RDS::DBInstance
+      Properties:
+        DBInstanceClass: db.t2.micro
+        Engine: mysql
+        EngineVersion: 5.7.34
+        MasterUsername: ${self:custom.dbUser}
+        MasterUserPassword: ${self:custom.dbPassword}
+        DBName: ${self:custom.dbName}
+        AllocatedStorage: 20
+        VPCSecurityGroups:
+          - vpc-0a402e4868b10915b
