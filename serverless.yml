@@ -6,10 +6,10 @@ provider:
   name: aws
   runtime: nodejs20.x
   environment:
-    DB_HOST: ${self:custom.dbHost}
-    DB_USER: ${self:custom.dbUser}
-    DB_PASSWORD: ${self:custom.dbPassword}
-    DB_NAME: ${self:custom.dbName}
+    DB_HOST: "database-sc.cz4gw2446sk6.us-east-1.rds.amazonaws.com"
+    DB_USER: "admin"
+    DB_PASSWORD: "root2024"
+    DB_NAME: "dbcampana_app"
 
 functions:
   hello:
