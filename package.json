@@ -5,7 +5,6 @@
   "main": "handler.js",
   "scripts": {
     "start": "serverless offline --stage DESA",
-    "doc": "serverless openapi generate",
     "test": "cross-env DB_HOST=database-sc.cz4gw2464s6k.us-east-1.rds.amazonaws.com DB_USER=admin DB_PASSWORD=root2024 DB_NAME=dbcampana_app jest"
   },
   "keywords": [],
