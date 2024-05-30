@@ -1,0 +1,35 @@
+org: sebastianorg
+app: api-campana-app
+service: api-campana
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: ${opt:stage,'DESA'}
+  environment:
+    DB_HOST: ${self:custom.dbHost}
+    DB_USER: ${self:custom.dbUser}
+    DB_PASSWORD: ${self:custom.dbPassword}
+    DB_NAME: ${self:custom.dbName}
+
+functions: ${file(config/serverless/functions.yaml)}
+
+custom:
+  defaultStage: DESA
+  defaultregion:
+    DESA: us-east-1
+    TEST: us-east-2
+  dbHost: database-sc.cz4gw2464s6k.us-east-1.rds.amazonaws.com
+  dbUser: admin
+  dbPassword: "root2024"
+  dbName: "dbcampana_app"
+  serverless-offline:
+    useChildProcesses: true
+
+plugins:
+  - serverless-offline
+
+package:
+  patterns:
+    - src/**
+    - '!node_modules/**'

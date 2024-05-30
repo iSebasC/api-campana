@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: API de Campaña
+  version: 1.0.0
+paths:
+  /consultar-mensajes:
+    post:
+      summary: Consulta mensajes activos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                mes:
+                  type: integer
+                idCliente:
+                  type: integer
+                  nullable: true
+      responses:
+        '200':
+          description: Lista de mensajes activos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    count:
+                      type: integer
+                    estadoEnvio:
+                      type: integer
+
+  /crear-campana:
+    post:
+      summary: Permite a los clientes crear una campaña
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombreCampana:
+                  type: string
+                idUsuario:
+                  type: integer
+                fechaHoraProgramacion:
+                  type: string
+                  format: date-time
+                estado:
+                  type: integer
+      responses:
+        '201':
+          description: Campaña creada satisfactoriamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string

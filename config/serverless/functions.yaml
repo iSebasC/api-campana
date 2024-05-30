@@ -1,0 +1,15 @@
+consultarMensajes:
+  handler: src/controller.consultarMensajes
+  events:
+    - http:
+        path: /consultar-mensajes
+        method: post
+        cors: true
+
+crearCampana:
+  handler: src/controller.crearCampana
+  events:
+    - http:
+        path: /crear-campana
+        method: post
+        cors: true
