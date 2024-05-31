@@ -1,20 +1,29 @@
 {
   "name": "api-campana",
   "version": "1.0.0",
-  "description": "",
+  "description": "API para gestionar campañas publicitarias usando Node.js, AWS Lambda, API Gateway y Serverless Framework.",
+  "author": "Sebastian Cabrera Alcala",
+  "license": "ISC",
   "scripts": {
     "start": "serverless offline --stage DESA",
     "deploy": "serverless deploy",
     "remove": "serverless remove",
     "doc": "open-swagger-ui --open ./docs/openapi.yml"
   },
-  "author": "Sebastian Cabrera Alcala",
-  "license": "ISC",
   "devDependencies": {
     "mysql2": "3.9.9",
     "serverless": "3.38.0",
     "serverless-offline": "13.3.2",
     "open-swagger-ui": "1.2.0",
     "openapi": "^1.0.1"
-  }
+  },
+  "keywords": [
+    "Node.js",
+    "AWS Lambda",
+    "API Gateway",
+    "Serverless",
+    "Campaign Management",
+    "Swagger",
+    "OpenAPI"
+  ]
 }
