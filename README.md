@@ -60,4 +60,4 @@ npm run doc
 
 ## Modelado de la base de datos
 
-El modelo de la base de datos se encuentra en la carpeta config [db_camapana](config/db/db_campana.sql).
+El modelo de la base de datos se encuentra en la carpeta config [db_campana](config/db/db_campana.sql).
