@@ -23,13 +23,10 @@ custom:
   dbUser: admin
   dbPassword: "root2024"
   dbName: "dbcampana_app"
-  documentation: ${file(docs/openapi.yml)}
-  serverless-offline:
-    useChildProcesses: true
 
 plugins:
   - serverless-offline
-  - serverless-openapi-documentation
+  - serverless-auto-swagger
 
 package:
   patterns:
