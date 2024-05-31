@@ -1,49 +1,63 @@
 # API Campaña
 
-API Campaña es una aplicación construida para demostrar cómo crear una API HTTP simple con Node.js, ejecutándose en AWS Lambda y API Gateway utilizando el Serverless Framework. Este proyecto permite la gestión de campañas publicitarias mediante la creación y consulta de las mismas a través de endpoints HTTP.
+API para gestionar campañas publicitarias con Node.js, AWS Lambda, API Gateway y Serverless Framework.
 
 ## Características
 
-- **Gestión de campañas publicitarias:** Permite crear y consultar campañas.
-- **Integración con AWS Lambda y API Gateway:** Utiliza AWS para el despliegue y manejo de la infraestructura.
-- **Uso de Serverless Framework:** Facilita el despliegue y la configuración en la nube.
+- Crear y consultar campañas.
+- Despliegue en AWS usando Serverless Framework.
 
 ## Requisitos
 
-Para ejecutar este proyecto localmente, necesitarás tener instalado:
-
-- **Node.js** (versión recomendada: 14.x o superior)
-- **npm** (viene con Node.js)
-- **Serverless Framework**
-
-## Configuración
-
-Antes de ejecutar el proyecto, asegúrate de configurar las variables de entorno necesarias. Estas variables deben incluirse en el entorno de ejecución o especificarse directamente en los scripts de `package.json` para desarrollo local:
-
+- Node.js 14.x o superior
+- npm
+- Serverless Framework
 
 ## Instalación
 
 Clona este repositorio y navega al directorio del proyecto. Ejecuta el siguiente comando para instalar las dependencias:
 
+```bash
+git clone <REPO_URL>
+cd <PROJECT_DIRECTORY>
 npm install
+```
 
 
 ## Ejecución
 
-Clona este repositorio y navega al directorio del proyecto. Ejecuta el siguiente comando para instalar las dependencias:
+Ejecuta el siguiente comando ejecutar el proyecto:
 
-npm install
+```bash
+npm run start
+```
 
-## Pruebas
+## Despliegue
 
-Clona este repositorio y navega al directorio del proyecto. Ejecuta el siguiente comando para instalar las dependencias:
+Despliega la aplicación en AWS:
 
-npm test
+```bash
+npm run deploy
+```
 
-## Documentación API
+## Eliminacion
 
-El archivo de especificación de los endpoints diseñados estan directamente en [api-spec.yaml](./docs/api-spec.yaml).
+Elimina la aplicación desplegada en AWS:
+
+```bash
+npm run remove
+```
+
+
+## Swagger
+ 
+Genera y abre la documentación de la API:
+
+```bash
+npm run doc
+```
+
 
 ## Modelado de la base de datos
 
-El archivo se encuentra en [db_camapana](db_campana.sql).
+El modelo de la base de datos se encuentra en la carpeta config [db_camapana](config/db/db_campana.sql).
