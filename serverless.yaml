@@ -1,5 +1,8 @@
 org: sebastianorg
 app: api-campana-app
+
+frameworkVersion: '3'
+
 service: api-campana
 
 provider:
@@ -23,8 +26,6 @@ custom:
   dbUser: admin
   dbPassword: "root2024"
   dbName: "dbcampana_app"
-  serverless-offline:
-    useChildProcesses: true
 
 plugins:
   - serverless-offline
@@ -33,3 +34,4 @@ package:
   patterns:
     - src/**
     - '!node_modules/**'
+    - '!README.md'
